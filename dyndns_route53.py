@@ -1,5 +1,5 @@
 """
- Requeriments:
+ Requirements:
 
      $ sudo pip install boto dnspython
 
@@ -23,8 +23,8 @@ logger.addHandler(handler)
 logger.setLevel(logging.INFO)
 
 # Settings, Change me!
-HOSTED_ZONE = 'ZXQU10000001'
-DOMAIN_NAME = 'home.mydomain.com'
+HOSTED_ZONE = 'Z215MEZ908EMNX'
+DOMAIN_NAME = 'ssh.scottmillerhosting.com'
 
 
 get_change_id = lambda response: response['ChangeInfo']['Id'].split('/')[-1]
