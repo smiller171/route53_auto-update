@@ -50,8 +50,8 @@ def resolve_name_ip(name):
     
 def main():
     
-    # Get your ip using a public service
-    current_ip = urllib2.urlopen('http://ip.42.pl/raw').read()
+    # Get your public IP from the hypervisor
+    current_ip = urllib2.urlopen('http://169.254.169.254/latest/meta-data/public-ipv4').read()
 
     # Avoid to hit the Route53 API if is not necessary.
     # so compare first to a DNS server if the IP changed
