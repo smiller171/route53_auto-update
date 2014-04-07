@@ -1,6 +1,8 @@
 #!/bin/bash
 
-mkdir /home/ec2-user/dyndns
-cd /home/ec2-user/dyndns
-wget https://s3.amazonaws.com/bootstrap.scottmillerhosting.com/dyndns_route53.py
+mkdir /tmp/dyndns
+cd /tmp/dyndns
+
+# edit the following to the path where your python script resides
+wget https://s3.amazonaws.com/<s3-bucket>/dyndns_route53.py
 python dyndns_route53.py

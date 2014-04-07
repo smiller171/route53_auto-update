@@ -3,7 +3,7 @@
 
      $ sudo pip install boto dnspython
 
- Edit ~/.boto to use your AWS credentials
+ Edit ~/.boto to use your AWS credentials or use included IAM role
 
 """
 import time
@@ -23,8 +23,8 @@ logger.addHandler(handler)
 logger.setLevel(logging.INFO)
 
 # Settings, Change me!
-HOSTED_ZONE = 'Z215MEZ908EMNX'
-DOMAIN_NAME = 'ssh.scottmillerhosting.com'
+HOSTED_ZONE = 'Enter Your Hosted Zone ID Here'
+DOMAIN_NAME = 'domain.name.you.want.updated.com'
 
 
 get_change_id = lambda response: response['ChangeInfo']['Id'].split('/')[-1]
@@ -51,6 +51,7 @@ def resolve_name_ip(name):
 def main():
     
     # Get your public IP from the hypervisor
+    # If you wish to use this on a non-AWS server, use http://ip.42.pl/raw instead
     current_ip = urllib2.urlopen('http://169.254.169.254/latest/meta-data/public-ipv4').read()
 
     # Avoid to hit the Route53 API if is not necessary.
