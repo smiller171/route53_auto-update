@@ -21,4 +21,4 @@ Automatically update a route53 entry at init.
 script set as public.*
 
 	
-Credits for dyndns_route53.py go to @mariocesar His original gist can be found here: https://gist.github.com/mariocesar/4142563
+Credit for dyndns_route53.py goes to @mariocesar His original gist can be found here: https://gist.github.com/mariocesar/4142563
